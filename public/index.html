@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B2B Order Management System</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-box">
+          <div class="brand-badge">B2B</div>
+          <h1>OrderFlow</h1>
+        </div>
+
+        <nav class="nav">
+          <a href="#">Dashboard</a>
+          <a href="#orders">Orders</a>
+          <a href="#customers">Customers</a>
+          <a href="#products">Products</a>
+          <a href="#pricing">Margin</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Business Control Center</p>
+            <h2>B2B Automation Dashboard</h2>
+          </div>
+          <button class="primary-btn">Generate report</button>
+        </header>
+
+        <section class="stats-grid" id="statsGrid"></section>
+
+        <section class="panel-grid">
+          <div class="panel wide-panel">
+            <div class="panel-header">
+              <h3>Recent Orders</h3>
+            </div>
+            <div id="ordersTable"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Message Templates</h3>
+            </div>
+            <div id="messagesList"></div>
+          </div>
+        </section>
+
+        <section class="panel-grid bottom-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Customers</h3>
+            </div>
+            <div id="customersList"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Products</h3>
+            </div>
+            <div id="productsList"></div>
+          </div>
+        </section>
+
+        <section class="panel-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Quick Profit Quote</h3>
+            </div>
+            <form id="quoteForm" class="stack-form">
+              <label>
+                Cost price
+                <input type="number" id="costPrice" step="0.01" value="100" required />
+              </label>
+              <label>
+                Margin %
+                <input type="number" id="marginPercent" step="0.01" value="20" required />
+              </label>
+              <button type="submit" class="primary-btn full-width">Calculate</button>
+            </form>
+            <div id="quoteResult" class="quote-result"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Add New Order</h3>
+            </div>
+            <form id="orderForm" class="stack-form">
+              <label>
+                Customer
+                <input type="text" id="customerName" placeholder="BluePeak Traders" required />
+              </label>
+              <label>
+                Product
+                <input type="text" id="productName" placeholder="Smart POS Terminal" required />
+              </label>
+              <label>
+                Category
+                <select id="category">
+                  <option>Electronics</option>
+                  <option>Industrial</option>
+                  <option>Apparel</option>
+                  <option>Home</option>
+                  <option>Food</option>
+                </select>
+              </label>
+              <label>
+                Quantity
+                <input type="number" id="quantity" value="1" min="1" required />
+              </label>
+              <label>
+                Unit cost
+                <input type="number" id="unitCost" step="0.01" value="100" required />
+              </label>
+              <label>
+                Margin %
+                <input type="number" id="orderMargin" step="0.01" value="20" required />
+              </label>
+              <button type="submit" class="primary-btn full-width">Create order</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
